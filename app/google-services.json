@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1069741423151",
+    "firebase_url": "https://frybl-27965.firebaseio.com",
+    "project_id": "frybl-27965",
+    "storage_bucket": "frybl-27965.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069741423151:android:1e3f5978b1c8858489a4da",
+        "android_client_info": {
+          "package_name": "com.example.frybl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069741423151-okbbgsbkvguh6rfveuja5lr449nqckoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frybl",
+            "certificate_hash": "409cd09dd9db9bcc1152d992c0423bcc5dac64ab"
+          }
+        },
+        {
+          "client_id": "1069741423151-mm5sec2eu404i39tu60891e7cqd5p6iu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbwGzDvMAJ1raGcOrX85AOBRjF_NvzuZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069741423151-mm5sec2eu404i39tu60891e7cqd5p6iu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
