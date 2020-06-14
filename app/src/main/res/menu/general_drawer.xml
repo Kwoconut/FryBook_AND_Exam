@@ -5,31 +5,36 @@
             <item
                 android:id="@+id/nav_home"
                 android:icon="@drawable/ic_home"
-                android:title="Home" />
+                android:title="@string/home" />
 
             <item
-                android:id="@+id/nav_user_profile"
-                android:icon="@drawable/ic_user_profile"
-                android:title="Profile" />
+                android:id="@+id/nav_lang_settings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/language_settings"/>
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_24px"
+                android:title="@string/log_out"/>
 
         </group>
 
-        <item android:title="Recipes">
+        <item android:title="@string/recipes">
             <menu>
                 <item
-                    android:id="@+id/nav_saved_recipe"
+                    android:id="@+id/nav_saved_recipes"
                     android:icon="@drawable/ic_saved_recipes"
-                    android:title="Saved Recipes" />
+                    android:title="@string/saved_recipes" />
 
                 <item
                     android:id="@+id/nav_user_recipe"
                     android:icon="@drawable/ic_user_recipes"
-                    android:title="Your Recipes" />
+                    android:title="@string/your_recipes" />
 
                 <item
                     android:id="@+id/nav_add_recipe"
                     android:icon="@drawable/ic_add_shopping"
-                    android:title="Add Recipe" />
+                    android:title="@string/add_recipe" />
             </menu>
         </item>
     </menu>

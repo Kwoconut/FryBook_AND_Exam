@@ -1,12 +1,71 @@
 <resources>
     <string name="app_name">FryBl</string>
-    <string name="nav_open" />
-    <string name="nav_close" />
+    <string name="nav_open" translatable="false" />
+    <string name="nav_close" translatable="false" />
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="cooking_time">Cooking time</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="field_required">Field required</string>
+    <string name="name_less_than_4">Name can not be less than 4</string>
+    <string name="error_category">Category required</string>
+    <string name="prepTime_error">Must be less than 1000</string>
+    <string name="recipe_category_default">Category</string>
+    <string name="recipe_category_1">Appetizers, Beverages</string>
+    <string name="recipe_category_2">Soups, Salads</string>
+    <string name="recipe_category_3">Vegetables</string>
+    <string name="recipe_category_4">Main Dishes</string>
+    <string name="recipe_category_5">Breads, Rolls</string>
+    <string name="recipe_category_6">Desserts</string>
+    <string name="recipe_category_7">Miscellaneous</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_password">Invalid password</string>
+    <string name="user_name_less_than_2">User name can\'t be less than 2</string>
+    <string name="password_less_than_6">Password should be at least 6 characters</string>
+    <string name="details">details</string>
+    <string name="frybook">FryBook</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign up</string>
+    <string name="cook_time">Cook time</string>
+    <string name="preparation_time">Preparation time</string>
+    <string name="total_time">Total time</string>
+    <string name="ingredients">ingredients</string>
+    <string name="instructions">instructions</string>
+    <string name="saved_recipes">Saved recipes</string>
+    <string name="delete_all">delete all</string>
+    <string name="name">Name</string>
+    <string name="rate_recipe">Rate recipe</string>
+    <string name="save">save</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="qty">Qty</string>
+    <string name="instruction">Instruction</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="upload_image">UPLOAD IMAGE</string>
+    <string name="next">next</string>
+    <string name="add">add</string>
+    <string name="prep_time">Prep Time</string>
+    <string name="more">more</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="language_settings">Language Settings</string>
+    <string name="recipes">Recipes</string>
+    <string name="your_recipes">Your Recipes</string>
+    <string name="add_recipe">Add Recipe</string>
+    <string name="choose_language">Choose language</string>
+    <string name="log_out">Log out</string>
+    <string name="confirm_delete">Confirm delete</string>
+    <string name="confirm_delete_message">Are you sure you want to delete</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_ingredient">Add ingredient</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_instruction">Add instruction</string>
+    <string name="rate">rate</string>
+    <string name="error_add_recipe">Error Add Recipe</string>
+    <string name="error_add_recipe_text">Your recipe doesn\'t have the minimum for it to be created. Check each tab!</string>
+    <string name="ok">Ok</string>
+    <string name="exit_add_recipe">Cancel add recipe</string>
+    <string name="exit_add_recipe_message">Are you sure you want to cancel this process? All your progress will be lost.</string>
+
 </resources>

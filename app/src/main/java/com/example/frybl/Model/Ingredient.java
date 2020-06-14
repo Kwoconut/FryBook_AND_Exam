@@ -1,6 +1,5 @@
 package com.example.frybl.Model;
 
-import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -8,12 +7,19 @@ import androidx.room.PrimaryKey;
 @Entity (tableName = "ingredient_table")
 public class Ingredient {
 
+    @Ignore
+    public static final String FIRESTOREKEY_INGREDIENT_NAME = "name";
+    @Ignore
+    public static final String FIRESTOREKEY_INGREDIENT_QUANTITY = "quantity";
+    @Ignore
+    public static final String FIRESTOREKEY_INGREDIENT_PARENTRECIPE = "recipeId";
+
     @PrimaryKey(autoGenerate = true)
     private int ingredientId;
-    private int recipeId;
     private String name;
     private String quantity;
     private boolean ticked;
+    private String recipeId;
 
     @Ignore
     public Ingredient()
@@ -27,11 +33,11 @@ public class Ingredient {
         this.ticked = ticked;
     }
 
-    public int getRecipeId() {
+    public String getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 

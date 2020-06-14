@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:hint="Ingredient"
+        android:hint="@string/ingredient"
         app:layout_constraintEnd_toStartOf="@id/dialogIngredientQuantityLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +35,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Qty"
+        android:hint="@string/qty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

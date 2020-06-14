@@ -3,6 +3,7 @@ package com.example.frybl.View.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -14,10 +15,12 @@ import com.example.frybl.Model.Upload;
 import com.example.frybl.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
 public class MainActivityAdapter extends FirestoreRecyclerAdapter<Upload, MainActivityAdapter.ViewHolder> {
 
+    private OnItemClickListener listener;
 
     public MainActivityAdapter(@NonNull FirestoreRecyclerOptions<Upload> options) {
         super(options);
@@ -39,6 +42,16 @@ public class MainActivityAdapter extends FirestoreRecyclerAdapter<Upload, MainAc
         Picasso.get().load(model.getRecipe().getImageUri()).placeholder(R.mipmap.ic_launcher_round).fit().centerCrop().into(holder.recipeImage);
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        this.listener = listener;
+    }
+
+    public interface OnItemClickListener
+    {
+        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder
     {
 
@@ -47,6 +60,7 @@ public class MainActivityAdapter extends FirestoreRecyclerAdapter<Upload, MainAc
         TextView recipeCookTimeTextView;
         RatingBar recipeRatingBar;
         ImageView recipeImage;
+        Button moreButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,7 +69,20 @@ public class MainActivityAdapter extends FirestoreRecyclerAdapter<Upload, MainAc
             recipePrepTimeTextView = itemView.findViewById(R.id.recipe_feed_prepTime_value);
             recipeRatingBar = itemView.findViewById(R.id.recipe_feed_rating_bar);
             recipeImage = itemView.findViewById(R.id.recipe_feed_image);
+            moreButton = itemView.findViewById(R.id.recipe_feed_button);
+
+            moreButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null)
+                    {
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
+                    }
+                }
+            });
         }
+
 
     }
 }

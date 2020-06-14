@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.example.frybl.Model.Instruction;
 import com.example.frybl.R;
 import com.example.frybl.ViewModel.AddRecipeViewModel;
@@ -30,12 +31,12 @@ public class DialogAddInstructionFragment extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.add_instructions_dialog,null);
 
-        builder.setView(view).setTitle("Add instruction").setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+        builder.setView(view).setTitle(R.string.add_instruction).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
             }
-        }).setPositiveButton("ADD", new DialogInterface.OnClickListener() {
+        }).setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String name = editTextInstructionName.getText().toString();

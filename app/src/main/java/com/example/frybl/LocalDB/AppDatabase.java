@@ -3,6 +3,9 @@ package com.example.frybl.LocalDB;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
+import com.example.frybl.LocalDB.DAO.IngredientDAO;
+import com.example.frybl.LocalDB.DAO.InstructionDAO;
+import com.example.frybl.LocalDB.DAO.RecipeDAO;
 import com.example.frybl.Model.Ingredient;
 import com.example.frybl.Model.Instruction;
 import com.example.frybl.Model.Recipe;

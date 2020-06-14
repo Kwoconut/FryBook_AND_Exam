@@ -1,6 +1,5 @@
 package com.example.frybl.View.Fragments;
 
-import android.content.ContentResolver;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +15,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.frybl.Model.Recipe;
-import com.example.frybl.View.Activities.AddRecipeActivity;
-import com.example.frybl.View.Adapters.AddRecipeInstructionsAdapter;
 import com.example.frybl.Model.Instruction;
 import com.example.frybl.R;
+import com.example.frybl.View.Activities.AddRecipeActivity;
+import com.example.frybl.View.Adapters.InstructionsAdapter;
 import com.example.frybl.ViewModel.AddRecipeViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,7 +29,7 @@ public class AddRecipeInstructionsFragment extends Fragment {
     private RecyclerView instructionsRV;
     private FloatingActionButton floatingActionButton;
     private AddRecipeViewModel viewModel;
-    private AddRecipeInstructionsAdapter adapter;
+    private InstructionsAdapter adapter;
     private Button button;
     private OnClickListenerInterface parentActivity;
     @Nullable
@@ -42,9 +40,8 @@ public class AddRecipeInstructionsFragment extends Fragment {
         instructionsRV = v.findViewById(R.id.add_instructions_recyclerView);
         instructionsRV.setLayoutManager(new LinearLayoutManager(getContext()));
         instructionsRV.setHasFixedSize(true);
-        adapter = new AddRecipeInstructionsAdapter();
+        adapter = new InstructionsAdapter();
         instructionsRV.setAdapter(adapter);
-        parentActivity = (AddRecipeActivity)getActivity();
 
         floatingActionButton = v.findViewById(R.id.add_instructions_floatingButton);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +55,7 @@ public class AddRecipeInstructionsFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveRecipe();
+                ((AddRecipeActivity)getActivity()).onAddRecipeClicked();
             }
         });
 
@@ -83,11 +80,6 @@ public class AddRecipeInstructionsFragment extends Fragment {
     {
         DialogAddInstructionFragment dialog = new DialogAddInstructionFragment();
         dialog.show(getParentFragmentManager(),"Add instruction");
-    }
-
-    private void saveRecipe()
-    {
-        parentActivity.onAddRecipeClicked();
     }
 
 

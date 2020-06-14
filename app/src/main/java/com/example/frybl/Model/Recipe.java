@@ -1,13 +1,10 @@
 package com.example.frybl.Model;
 
-import android.net.Uri;
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +12,25 @@ import java.util.List;
 @Entity (tableName = "recipe_table")
 public class Recipe {
 
-    @PrimaryKey(autoGenerate = true)
-    private int recipeId;
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_ID = "recipeId";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_NAME = "name";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_DESCRIPTION = "description";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_CATEGORY = "category";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_PREPARATIONTIME = "preparationtime";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_COOKTIME = "cooktime";
+    @Ignore
+    public static final String FIRESTOREKEY_RECIPE_IMAGE = "image";
+
+
+    @PrimaryKey
+    @NonNull
+    private String recipeId;
     private String name;
     private String description;
     private String category;
@@ -44,11 +58,12 @@ public class Recipe {
         this.instructions = new ArrayList<>();
     }
 
-    public int getRecipeId() {
+
+    public String getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 
@@ -114,6 +129,11 @@ public class Recipe {
 
     public void setInstructions(List<Instruction> instructions) {
         this.instructions = instructions;
+    }
+
+    public int getTotalTime()
+    {
+        return cookTime + preparationTime;
     }
 
     @Override

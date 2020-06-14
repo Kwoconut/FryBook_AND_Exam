@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,9 +15,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.frybl.View.Adapters.AddRecipeIngredientsAdapter;
 import com.example.frybl.Model.Ingredient;
 import com.example.frybl.R;
+import com.example.frybl.View.Activities.AddRecipeActivity;
+import com.example.frybl.View.Adapters.IngredientsAdapter;
 import com.example.frybl.ViewModel.AddRecipeViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -27,17 +29,26 @@ public class AddRecipeIngredientsFragment extends Fragment {
     private RecyclerView ingredientsRV;
     private FloatingActionButton floatingActionButton;
     private AddRecipeViewModel viewModel;
-    private AddRecipeIngredientsAdapter adapter;
+    private IngredientsAdapter adapter;
+    private Button nextButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_add_recipe_ingredients,container,false);
 
+        nextButton = v.findViewById(R.id.add_ingredients_next_button);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((AddRecipeActivity)getActivity()).onNextToInstructionsClicked();
+            }
+        });
+
         ingredientsRV = v.findViewById(R.id.add_ingredients_recyclerView);
         ingredientsRV.setLayoutManager(new LinearLayoutManager(getContext()));
         ingredientsRV.setHasFixedSize(true);
-        adapter = new AddRecipeIngredientsAdapter();
+        adapter = new IngredientsAdapter();
         ingredientsRV.setAdapter(adapter);
 
         floatingActionButton = v.findViewById(R.id.add_ingredients_floatingButton);
@@ -81,6 +92,11 @@ public class AddRecipeIngredientsFragment extends Fragment {
             }
         });
 
+    }
+
+    public interface OnClickListenerInterface
+    {
+        void onNextToInstructionsClicked();
     }
 
 

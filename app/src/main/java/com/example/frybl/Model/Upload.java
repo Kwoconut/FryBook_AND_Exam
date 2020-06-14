@@ -1,7 +1,15 @@
 package com.example.frybl.Model;
-import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
+import androidx.room.Ignore;
+
 public class Upload {
+
+    @Ignore
+    public static final String FIRESTOREKEY_UPLOAD_AUTHOR = "author";
+    @Ignore
+    public static final String FIRESTOREKEY_UPLOAD_RATING = "rating";
+    public static final String FIRESTOREKEY_UPLOAD_NR_OF_RATING = "nr_of_rating";
 
     private String author;
     private Recipe recipe;

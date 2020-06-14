@@ -7,11 +7,17 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "instruction_table")
 public class Instruction {
 
+    @Ignore
+    public static final String FIRESTOREKEY_INSTRUCTION_DESCRIPTION = "description";
+    @Ignore
+    public static final String FIRESTOREKEY_INSTRUCTION_RECIPEID = "recipeId";
+
+
     @PrimaryKey (autoGenerate = true)
     private int instructionId;
     private String description;
     private boolean ticked;
-    private int recipeId;
+    private String recipeId;
 
     @Ignore
     public Instruction()
@@ -24,11 +30,11 @@ public class Instruction {
         this.ticked = ticked;
     }
 
-    public int getRecipeId() {
+    public String getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 

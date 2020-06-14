@@ -19,7 +19,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Name"
+        android:hint="@string/name"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +44,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Category"
+        android:hint="@string/category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_recipe_name"
@@ -67,7 +68,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Preparation time"
+        android:hint="@string/preparation_time"
         app:helperText="minutes"
         app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +94,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Cook time"
+        android:hint="@string/cook_time"
         app:helperText="minutes"
         app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_recipe_preparationTime"
         app:startIconContentDescription="Recipe preparation time"
-        app:startIconDrawable="@drawable/ic_time">>
+        app:startIconDrawable="@drawable/ic_time">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/details_recipe_cookTime_textField"
@@ -120,8 +121,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-
-        android:hint="Description"
+        android:hint="@string/description"
         app:counterEnabled="true"
         app:counterMaxLength="1000"
         app:helperText="(optional)"
@@ -133,7 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/details_recipe_cookTime"
         app:layout_constraintVertical_bias="0.0"
         app:startIconContentDescription="Recipe description"
-        app:startIconDrawable="@drawable/ic_user_recipes">>
+        app:startIconDrawable="@drawable/ic_user_recipes">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/details_recipe_description_textField"
@@ -164,7 +164,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/primaryColor"
         android:elevation="10dp"
-        android:text="UPLOAD IMAGE"
+        android:text="@string/upload_image"
         app:icon="@drawable/ic_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -178,7 +178,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/primaryColor"
         android:elevation="10dp"
-        android:text="next"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

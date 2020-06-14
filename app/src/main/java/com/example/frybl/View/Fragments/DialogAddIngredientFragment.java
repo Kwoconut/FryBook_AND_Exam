@@ -32,12 +32,12 @@ public class DialogAddIngredientFragment extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.add_ingredients_dialog,null);
 
-        builder.setView(view).setTitle("Add ingredient").setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+        builder.setView(view).setTitle(R.string.add_ingredient).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
             }
-        }).setPositiveButton("ADD", new DialogInterface.OnClickListener() {
+        }).setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String name = editTextIngredientName.getText().toString();

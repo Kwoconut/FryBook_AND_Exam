@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
@@ -31,8 +30,8 @@
             android:id="@+id/recipe_feed_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:layout_toEndOf="@+id/recipe_feed_image"
             android:maxLines="3"
@@ -48,47 +47,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
 
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/recipe_feed_image"
-            android:text="Prep Time"
+            android:text="@string/prep_time"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recipe_feed_prepTime_value"
-            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image" />
+            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_feed_rating_bar" />
 
         <TextView
             android:id="@+id/recipe_feed_prepTime_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recipe_feed_prepTime"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_toEndOf="@+id/recipe_feed_image"
             android:text="10 minutes"
-            app:layout_constraintBottom_toTopOf="@+id/recipe_feed_cookTime"
-            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image" />
+            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_feed_prepTime" />
 
         <TextView
             android:id="@+id/recipe_feed_cookTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recipe_feed_prepTime_value"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_toEndOf="@+id/recipe_feed_image"
-            android:text="Cook Time"
+            android:text="@string/cook_time"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recipe_feed_cookTime_value"
-            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image" />
+            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_feed_prepTime_value" />
 
         <TextView
             android:id="@+id/recipe_feed_cookTime_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@id/recipe_feed_image"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
             android:text="16 minutes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image" />
+            app:layout_constraintStart_toEndOf="@+id/recipe_feed_image"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_feed_cookTime" />
 
         <RatingBar
             android:id="@+id/recipe_feed_rating_bar"
@@ -96,21 +95,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recipe_feed_title"
-
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_toEndOf="@+id/recipe_feed_image"
             app:layout_constraintStart_toEndOf="@+id/recipe_feed_image"
             app:layout_constraintTop_toBottomOf="@+id/recipe_feed_title" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/recipe_feed_button"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="8dp"
-            android:text="more"
+            android:text="@string/more"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

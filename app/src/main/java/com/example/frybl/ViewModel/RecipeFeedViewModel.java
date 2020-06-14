@@ -4,13 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
-import com.example.frybl.DaggerComponents.AppModule;
-import com.example.frybl.DaggerComponents.BackendModule;
-import com.example.frybl.DaggerComponents.DaggerBackendComponent;
 import com.example.frybl.Model.Upload;
 import com.example.frybl.Repository.AppRepository;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseUser;
 
 import javax.inject.Inject;
 
@@ -21,11 +20,18 @@ public class RecipeFeedViewModel extends AndroidViewModel {
 
     public RecipeFeedViewModel(@NonNull Application application) {
         super(application);
-        DaggerBackendComponent.builder().appModule(new AppModule(application)).backendModule(new BackendModule(application)).build().inject(this);
     }
 
-    public FirestoreRecyclerOptions<Upload> getFirestoreOptions()
+    public FirestoreRecyclerOptions<Upload> getFirestoreFeedOptions()
     {
-        return repository.getFirestoreOptions();
+        return repository.getFirestoreFeedOptions();
+    }
+
+    public LiveData<FirebaseUser> getCurrentUser() {
+        return repository.getCurrentUser();
+    }
+
+    public void logout() {
+        repository.logout();
     }
 }
