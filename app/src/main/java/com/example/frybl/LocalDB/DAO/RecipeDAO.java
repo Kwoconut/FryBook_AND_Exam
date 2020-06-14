@@ -3,6 +3,7 @@ package com.example.frybl.LocalDB.DAO;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.frybl.Model.Recipe;
@@ -14,7 +15,7 @@ import java.util.List;
 @Dao
 public interface RecipeDAO {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insert(Recipe recipe);
 
     @Query("SELECT * FROM recipe_table")

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -85,6 +86,7 @@ public class UploadDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 viewModel.saveRecipe();
+                Toast.makeText(UploadDetailsActivity.this, "Recipe saved", Toast.LENGTH_SHORT).show();
             }
         });
 
