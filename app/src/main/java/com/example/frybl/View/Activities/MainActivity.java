@@ -42,18 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     RecipeFeedViewModel viewModel;
     static RepositoryComponent component;
     DrawerLayout drawerLayout;
-
-    public static RepositoryComponent getComponent()
-    {
-        return component;
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        feedViewAdapter.startListening();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +95,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+    }
+
+    public static RepositoryComponent getComponent()
+    {
+        return component;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        feedViewAdapter.startListening();
     }
 
     @Override
